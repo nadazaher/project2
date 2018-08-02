@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 
 const restaurantRouter   = require('./routes/restaurantRouter');
 const reviewsRouter   = require('./routes/reviewsRouter');
-const locationRouter   = require('./routes/locationRouter');
-const cuisineRouter   = require('./routes/cuisineRouter');
+// const cuisineRouter   = require('./routes/cuisineRouter');
+// const locationRouter   = require('./routes/locationRouter');
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,8 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/restaurants/', restaurantRouter);
-app.use('/restaurants/location', locationRouter);
-app.use('/restaurants/cuisine', cuisineRouter);
+
 app.use('/reviews', reviewsRouter);
 
 

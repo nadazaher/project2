@@ -11,21 +11,7 @@ module.exports = {
         FROM restaurant
         `);
     },
-    findByLocation(location) {
-        return db.query(`
-        SELECT *
-        FROM restaurant
-        where location = $1
-        `, location);
-    },
-    findByCuisine(cuisine) {
-        return db.query(`
-        SELECT *
-        FROM restaurant
-        where cuisine = $1
-        `, cuisine);
-    },
-
+ 
     create(newRestaurant) {
         return db.one(`
         INSERT INTO restaurant

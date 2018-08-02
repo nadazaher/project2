@@ -2,49 +2,27 @@ const db = require('../models/restaurant');
 
 module.exports = {
 index(req, res, next) {
+  const {location,cuisine} = req.query
     db.findAll()
       .then((restaurants) => {
-        res.locals.data = restaurants;
+        return restaurants.filter((restaurant) => {
+          return location?restaurant.location === location: true &&
+           cuisine?restaurant.cuisine === cuisine: true
+        })
+      })
+      .then((filteredRestaurants) => {
+        res.locals.data = filteredRestaurants;
         next();
       })
       .catch(e => next(e));
       },
 
-getByLocation(req, res, next) {
-    db.findByLocation(req.params.location)
-        .then((restaurant) => {
-            res.locals.location = restaurant;
-            console.log(res.locals.location);
-
-        next();
-        })
-        .catch((e) => {
-          res.send(404);
-        });
-      },
-
-getByCuisine(req, res, next) {
-    console.log('cuisine')
-    db.findByCuisine(req.params.cuisine)
-        .then((restaurant) => {
-            res.locals.cuisine = restaurant;
-            console.log(res.locals.cuisine);
-        next();
-        })
-            .catch((e) => {
-              res.send(404);
-            });
-        },
-
 createRestaurant(req, res, next) {
-    db.create(req.body)
-            .then((newRestaurant) => {
-              res.locals.data = newRestaurant;
-              next();
-            })
-            .catch ((e) => {
-              next(e);
-            })
-          },
-
-  }
+  db.create(req.body)
+          .then((newRestaurant) => {
+            res.locals.data = newRestaurant;
+            next();
+          })
+          .catch(e => next(e));
+      },
+}
