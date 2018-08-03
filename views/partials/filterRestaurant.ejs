@@ -1,0 +1,22 @@
+
+<form action="/restaurants" method="GET">
+
+<div class="for-filter-by-location">
+  <label class="filter-by-location">Choose Location</label>
+  <section class="for-location-inputs">
+    <%- include('../partials/filter/locations_as_inputs') %>
+  </section>
+
+</div>
+
+<div class="for-filter-by-cuisine">
+  <label class="filter-by-cuisine">Choose Cuisine</label>
+  <section class="for-cuisine-inputs">
+  <%- include('../partials/filter/cuisines_as_inputs') %>
+  </section>
+</div>
+
+<div class="for-search-button">
+  <button type="submit" class = "search-button"> Search </button>
+</div>
+</form>

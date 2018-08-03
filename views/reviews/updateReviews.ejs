@@ -1,0 +1,22 @@
+<form action="/reviews/<%=reviews.id"%>?_method=put"
+method="post">
+?_ is what is telling it to override - thats why we put that in app.use
+<label>
+Name
+<input type = "text" name = "name" value = "<%=reviews.name%"/>
+</label>
+
+hard code beginning of pad use  ejx then allow override to put not post
+
+
+form can only post or get NOT put or delete - 
+thats when we use methodoverride 
+
+put.(reviews/:id', reviewscontrolller.update, redirect.)
+
+DELETE:
+- never needs to have a body
+- just one line form
+<form action="/reviews/<%=reviews.id"%>?_method=delete"
+method="post">
+<button type="submit"><delete></button>

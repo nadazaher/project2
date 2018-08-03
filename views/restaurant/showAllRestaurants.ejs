@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<div>
+        <h2>Here are the restaurants</h2>
+    <% restaurants.forEach(restaurant => { %>
+<!-- // loop into restaurants to show all -->
+        <p>Name: <%= restaurant.name %></p>
+        <p>Location: <%= restaurant.location %></p>
+        <p>Cuisine: <%= restaurant.cuisine %></p>
+        <% }) %>
+        <button type="submit" class= "addnewbutton"><a href="/restaurants/new">Add new restaurant</a></button>
+</div>
+<div>
+<%- include('../partials/filterRestaurant') %>
+</div>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/foot') %>
