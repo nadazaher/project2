@@ -4,9 +4,9 @@ const restaurantController = require('../controllers/restaurantController');
 const viewController = require('../controllers/viewController');
 const restaurantRouter = express.Router();
 
-const showJSON = (req,res) => {
-    res.json(res.locals.data);
-  };
+// const showJSON = (req,res) => {
+//     res.json(res.locals.data);
+//   };
 
 
 restaurantRouter.route('/').get(restaurantController.index, viewController.showAllRestaurants, viewController.show404);

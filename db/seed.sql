@@ -9,7 +9,15 @@ INSERT INTO restaurant (name, location, cuisine) VALUES
 ), 
 ( 'Ilili', 
     'Flatiron',
-        'Lebanese');
+        'Lebanese'),
+
+( 'Milos', 
+    'Midtown',
+        'Greek'),
+
+ ( 'Symposium', 
+    'Upper West Side',
+        'Greek');       
 
 DELETE FROM reviews;
 

@@ -1,22 +1,26 @@
-<form action="/reviews/<%=reviews.id"%>?_method=put"
-method="post">
-?_ is what is telling it to override - thats why we put that in app.use
-<label>
-Name
-<input type = "text" name = "name" value = "<%=reviews.name%"/>
-</label>
+<%- include('./partials/head') %>
+<h2>Pre-filled edit Form</h2>
+<form 
+  method="POST"
+  action="/reviews/<%= reviews.id %>?_method=PUT">
+  <div>
+  <label for="author">Author:  </label>
+  <input value="<%= reviews.author %>"
+  type="text" name="author" id="author />
+</div>
+<div>
+  <label for="content">Content:  </label>
+  <input value="<%= reviews.content %>"
+  type="text" name="content" id="content" />
+</div>
+<br />
+  <input type="submit" class ="updatebutton"><a href="/reviews/edit">Update review</a></button>
 
-hard code beginning of pad use  ejx then allow override to put not post
+</form>
+<%- include('./partials/footer') %>
 
 
 form can only post or get NOT put or delete - 
 thats when we use methodoverride 
 
-put.(reviews/:id', reviewscontrolller.update, redirect.)
 
-DELETE:
-- never needs to have a body
-- just one line form
-<form action="/reviews/<%=reviews.id"%>?_method=delete"
-method="post">
-<button type="submit"><delete></button>

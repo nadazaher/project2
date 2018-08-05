@@ -10,7 +10,6 @@ module.exports = {
           .catch(e => next(e));
     },
     getById(req, res, next) {
-        console.log('hello');
         db.findById(req.params.id)
             .then((restaurant) => {
                 res.locals.id = restaurant;
@@ -18,7 +17,7 @@ module.exports = {
                 next();
             })
             .catch((e) => {
-                res.send(404);
+                res.sendStatus(404);
                 });
     },
     createReview(req, res, next) {

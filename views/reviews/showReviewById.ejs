@@ -1,0 +1,13 @@
+<%- include('../partials/head') %>
+<body>
+        <h2>Here are the reviews for restaurant ()</h2>
+<div>
+        <p>Author: <%= reviews.author %></p>
+        <p>Content: <%= reviews.content %></p>
+        <button type="submit" class= "editbutton"><a href="/reviews/:id/edit">Edit review</a></button>
+        <button type="submit" class= "deletebutton"><a href="/reviews">Delete review</a></button>
+        <button type="submit" class= "addnewbutton"><a href="/reviews/new">Add new review</a></button>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/foot') %>
+

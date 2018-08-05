@@ -11,6 +11,7 @@ module.exports = {
         FROM restaurant
         `);
     },
+    
  
     create(newRestaurant) {
         return db.one(`

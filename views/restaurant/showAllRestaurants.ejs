@@ -3,7 +3,9 @@
         <h2>Here are the restaurants</h2>
     <% restaurants.forEach(restaurant => { %>
 <!-- // loop into restaurants to show all -->
-        <p>Name: <%= restaurant.name %></p>
+        <div class="restaurant-link">
+        <b><a href = "">Name: <%= restaurant.name %></a></b>
+        </div>
         <p>Location: <%= restaurant.location %></p>
         <p>Cuisine: <%= restaurant.cuisine %></p>
         <% }) %>

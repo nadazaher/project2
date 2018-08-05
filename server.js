@@ -2,6 +2,7 @@ const path       = require('path');
 const logger     = require('morgan');
 const express    = require('express');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 const restaurantRouter   = require('./routes/restaurantRouter');
 const reviewsRouter   = require('./routes/reviewsRouter');
@@ -14,6 +15,8 @@ app.use(logger('dev'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(methodOverride('_method'));
 
 app.use('/restaurants', restaurantRouter);
 app.use('/reviews', reviewsRouter);

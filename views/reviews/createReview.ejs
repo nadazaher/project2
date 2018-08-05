@@ -1,0 +1,16 @@
+<%- include('../partials/head') %>
+
+<form action="/reviews" method="post">
+<h2>New Review</h2>
+<label for="author">
+  Author:
+  <input type="text" name="author">
+</label>
+<label for="content">
+  Location:
+  <input type="text" name="content">
+</label>
+<button type="submit">Create Review</button>
+</form>
+
+<%- include('../partials/foot') %>
