@@ -8,9 +8,13 @@
         <p>Content: <%= reviews[x].content %></p>
         <button type="submit" class= "editbutton"><a href="/reviews/<%=reviews[x].review_id%>/edit">Edit review</a></button>
         <%- include('./deleteReview', {review: reviews[x]}) %>
-        <button type="submit" class= "addnewbutton"><a href="/reviews/<%=reviews[x].restaurant_id%>/new/">Add new review</a></button>
         <% } %>
+        <form action="/reviews/<%= reviews[0].restaurant_id %>/new" action="GET">
+        <button type="submit" class= "addnewbutton"><a>Add new review</a></button>
+</form>
+</div>
 
 <%- include('../partials/footer') %>
 <%- include('../partials/foot') %>
+
 
