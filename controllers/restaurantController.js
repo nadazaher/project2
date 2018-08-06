@@ -3,7 +3,7 @@ const db = require('../models/restaurant');
 module.exports = {
   index(req, res, next) {
     const {location,cuisine} = req.query
-    console.log(location);
+    console.log("nada", location, cuisine);
       db.findAll()
         .then((restaurants) => {
           return restaurants.filter((restaurant) => {
@@ -13,7 +13,7 @@ module.exports = {
         })
         .then((filteredRestaurants) => {
           res.locals.data = filteredRestaurants;
-          console.log(filteredRestaurants);
+          console.log("john", filteredRestaurants);
           //Check location and cuisine for filtered results - one location / one cuisine option
           if(req.query.location || req.query.cuisine){
             for(var x = 0; x < filteredRestaurants.length; x++){
@@ -30,6 +30,9 @@ module.exports = {
         .catch(e => next(e));
         },
   
+// filterRestaurant(req,res,next) {
+ 
+// }
 
 createRestaurant(req, res, next) {
   db.create(req.body)

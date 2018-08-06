@@ -12,7 +12,28 @@ module.exports = {
         `);
     },
     
- 
+    findByCuisine(cuisine) {
+        return db.query(`
+        SELECT * 
+        FROM restaurant
+        WHERE cuisine = $/cuisine/`, cuisine);
+    },
+
+    findByLocation(location) {
+        return db.query(`
+        SELECT * 
+        FROM restaurant
+        WHERE location = $/location/`, location);
+    },
+
+    findByCuisineAndLocation(cuisine,location) {
+        return db.query(`
+        SELECT * 
+        FROM restaurant
+        WHERE cuisine = $/cuisine/ AND location = $/location/`, [cuisine, location]);
+    },
+
+
     create(newRestaurant) {
         return db.one(`
         INSERT INTO restaurant

@@ -22,23 +22,29 @@ module.exports = {
         res.render('reviews/createReview', {reviews: res.locals.id, restaurant_id: req.params.id});
     },
 
+        //     (req,res) => res.redirect(`/reviews/${req.params.restaurant.id}`)
+
+
     handleDelete(req, res) {
         console.log('deleteeeee');
-        const id = restaurant_id;
-        res.redirect('reviews/:id');
+        console.log(req.params.restaurant_id);
+        res.redirect(`/reviews/${req.params.restaurant_id}`);
       },
 
     showEdit(req, res) {
-        // not able to understand the id here
         res.render('reviews/updateReview');
 
       },
 
     handleUpdate(req, res) {
         const { id } = req.params;
-        console.log(res.locals);
         res.redirect(`/reviews/${res.locals.data.restaurant_id}`);
       },
+
+    handleCreate(req,res) {
+        const { id } = req.params;
+        res.redirect(`/reviews/${res.locals.data.restaurant_id}`);
+    },
     
     show404(req, res) {
         res.send(404);

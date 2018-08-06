@@ -43,9 +43,10 @@ module.exports = {
               },
 
     deleteReview(req, res, next) {
+      console.log('nada delete');
         db.delete(req.params.id)
             .then(() => {
-              res.sendStatus(200);
+              next();
             })
             .catch((e) => {
               res.sendStatus(400);

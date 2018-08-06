@@ -12,8 +12,16 @@ module.exports = {
     },
     findByRestaurantId(id) {
         return db.many(`
-        SELECT author, content, name, restaurant_id, reviews.id as review_id
-        FROM reviews JOIN restaurant ON (reviews.restaurant_id = restaurant.id)
+        SELECT 
+        author, 
+        content, 
+        name,
+        photo,
+        restaurant_id,
+        reviews.id as review_id
+        FROM reviews 
+        JOIN restaurant 
+        ON (reviews.restaurant_id = restaurant.id)
         where restaurant.id = ${id}
         `);
     },

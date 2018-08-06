@@ -1,13 +1,14 @@
 <%- include('../partials/head') %>
 <body>
         <h2>Here are the reviews for restaurant <b><%=reviews[0].name %></b></h2>
+        <img src="<%= reviews[0].photo %>" class="restaurant-image" />
 <div>
         <% for (var x = 0; x < reviews.length; x++) { %>
         <p>Author: <%= reviews[x].author %></p>
         <p>Content: <%= reviews[x].content %></p>
-        <button type="submit" class= "addnewbutton"><a href="/reviews/<%=reviews[x].restaurant_id%>/new/">Add new review</a></button>
         <button type="submit" class= "editbutton"><a href="/reviews/<%=reviews[x].review_id%>/edit">Edit review</a></button>
-        <button type="submit" class= "deletebutton"><a href="/reviews/<%=reviews[x].review_id%>/delete">Delete review</a></button>
+        <%- include('./deleteReview', {review: reviews[x]}) %>
+        <button type="submit" class= "addnewbutton"><a href="/reviews/<%=reviews[x].restaurant_id%>/new/">Add new review</a></button>
         <% } %>
 
 <%- include('../partials/footer') %>

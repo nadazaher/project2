@@ -20,8 +20,8 @@ const handle404 = (err, req, res, next) => {
 
 reviewsRouter.route('/').get(reviewsController.index, showJSON);
 reviewsRouter.route('/:id/new').get(viewController.createReview);
-reviewsRouter.route('/').post(reviewsController.createReview, 
-  (req,res) => res.redirect(`/reviews`)
+reviewsRouter.route('/').post(reviewsController.createReview, viewController.handleCreate,
+  (req,res) => res.redirect(`/reviews/:id`)
   );
 
 reviewsRouter.route('/:id').get(reviewsController.getByRestaurantId, viewController.showReviewById, viewController.show404);
@@ -30,14 +30,6 @@ reviewsRouter.route('/:id/edit').get(reviewsController.getById, viewController.s
 // this should allow user to update existing review DOES NOT WORK
 reviewsRouter.route('/:id').put(reviewsController.updateReview, viewController.handleUpdate,
   (req,res) => res.redirect(`/reviews/:id`));
-
-// delete review when click button? 
-reviewsRouter.route('/:id/delete').delete(reviewsController.deleteReview, (req, res) => {
-  res.sendStatus(200);
-});
-  
-  // viewController.handleDelete);
-
 
 
 module.exports = reviewsRouter;
