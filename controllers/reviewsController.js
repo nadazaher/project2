@@ -11,15 +11,26 @@ module.exports = {
     },
     getById(req, res, next) {
         db.findById(req.params.id)
-            .then((restaurant) => {
-                res.locals.id = restaurant;
-                console.log(res.locals.id);
+            .then((review) => {
+                res.locals.review = review;
+                console.log(res.locals.review);
                 next();
             })
             .catch((e) => {
                 res.sendStatus(404);
                 });
     },
+    getByRestaurantId(req, res, next) {
+      db.findByRestaurantId(req.params.id)
+          .then((restaurant) => {
+              res.locals.restaurant = restaurant;
+              console.log(res.locals.restaurant);
+              next();
+          })
+          .catch((e) => {
+              res.sendStatus(404);
+              });
+  },
     createReview(req, res, next) {
         db.create(req.body)
                 .then((newReview) => {
@@ -53,9 +64,11 @@ module.exports = {
         db.update(modifiedReview)
              .then((review) => {
                res.locals.data = review;
+               console.log('nada', res.locals.data);
                next();
              })
              .catch(e => next(e));
           }, 
+
 
 }

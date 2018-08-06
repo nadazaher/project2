@@ -10,13 +10,21 @@ module.exports = {
         FROM reviews
         `);
     },
-    findById(id) {
-        return db.query(`
-        SELECT *
+    findByRestaurantId(id) {
+        return db.many(`
+        SELECT author, content, name, restaurant_id, reviews.id as review_id
         FROM reviews JOIN restaurant ON (reviews.restaurant_id = restaurant.id)
         where restaurant.id = ${id}
         `);
     },
+
+    findById(id){
+        return db.one(`
+        SELECT * FROM reviews
+        WHERE id=$1`,id)
+    },
+
+
 
     create(newReview) {
         return db.one(`
@@ -35,9 +43,9 @@ module.exports = {
     },
 
     update(review) {
-        return db.query(`
+        return db.one(`
         UPDATE reviews
-        SET restaurant_id = $/restaurant_id/, author = $/author/, content = $/content/
+        SET author = $/author/, content = $/content/
         WHERE id = $/id/
         RETURNING *
         `, review);

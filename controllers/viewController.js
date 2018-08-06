@@ -15,7 +15,7 @@ module.exports = {
     // }, 
 
     showReviewById (req,res) {
-        res.render('reviews/showReviewById', {reviews: res.locals.id});
+        res.render('reviews/showReviewById', {reviews: res.locals.restaurant});
     },
 
     createReview (req,res) {
@@ -23,19 +23,21 @@ module.exports = {
     },
 
     handleDelete(req, res) {
+        console.log('deleteeeee');
         const id = restaurant_id;
         res.redirect('reviews/:id');
       },
 
     showEdit(req, res) {
         // not able to understand the id here
-        res.render('reviews/updateReview', {reviews: res.locals.data[0].id});
+        res.render('reviews/updateReview');
 
       },
 
     handleUpdate(req, res) {
         const { id } = req.params;
-        res.redirect(`/reviews/${id}`);
+        console.log(res.locals);
+        res.redirect(`/reviews/${res.locals.data.restaurant_id}`);
       },
     
     show404(req, res) {

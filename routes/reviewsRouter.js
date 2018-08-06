@@ -24,9 +24,9 @@ reviewsRouter.route('/').post(reviewsController.createReview,
   (req,res) => res.redirect(`/reviews`)
   );
 
-reviewsRouter.route('/:id').get(reviewsController.getById, viewController.showReviewById, viewController.show404);
+reviewsRouter.route('/:id').get(reviewsController.getByRestaurantId, viewController.showReviewById, viewController.show404);
 // this needs to show the pre-filled review form,  DOES NOT WORK because ID in updateReview is undefined?
-reviewsRouter.route('/:id/edit').get(reviewsController.updateReview, viewController.showEdit);
+reviewsRouter.route('/:id/edit').get(reviewsController.getById, viewController.showEdit);
 // this should allow user to update existing review DOES NOT WORK
 reviewsRouter.route('/:id').put(reviewsController.updateReview, viewController.handleUpdate,
   (req,res) => res.redirect(`/reviews/:id`));

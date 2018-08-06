@@ -5,9 +5,9 @@
         <% for (var x = 0; x < reviews.length; x++) { %>
         <p>Author: <%= reviews[x].author %></p>
         <p>Content: <%= reviews[x].content %></p>
-        <button type="submit" class= "editbutton"><a href="/reviews/<%=reviews[x].id%>/edit">Edit review</a></button>
-        <button type="submit" class= "deletebutton"><a href="/reviews/<%=reviews[x].id%>/delete">Delete review</a></button>
         <button type="submit" class= "addnewbutton"><a href="/reviews/<%=reviews[x].restaurant_id%>/new/">Add new review</a></button>
+        <button type="submit" class= "editbutton"><a href="/reviews/<%=reviews[x].review_id%>/edit">Edit review</a></button>
+        <button type="submit" class= "deletebutton"><a href="/reviews/<%=reviews[x].review_id%>/delete">Delete review</a></button>
         <% } %>
 
 <%- include('../partials/footer') %>
