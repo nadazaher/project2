@@ -1,12 +1,14 @@
 <%- include('../partials/head') %>
 <body>
-        <h2>Here are the reviews for restaurant ()</h2>
+        <h2>Here are the reviews for restaurant <%=reviews[0].name %></h2>
 <div>
-        <p>Author: <%= reviews.author %></p>
-        <p>Content: <%= reviews.content %></p>
-        <button type="submit" class= "editbutton"><a href="/reviews/:id/edit">Edit review</a></button>
-        <button type="submit" class= "deletebutton"><a href="/reviews">Delete review</a></button>
-        <button type="submit" class= "addnewbutton"><a href="/reviews/new">Add new review</a></button>
+        <% for (var x = 0; x < reviews.length; x++) { %>
+        <p>Author: <%= reviews[x].author %></p>
+        <p>Content: <%= reviews[x].content %></p>
+        <button type="submit" class= "editbutton"><a href="/reviews/<%=reviews[x].id%>/edit">Edit review</a></button>
+        <button type="submit" class= "deletebutton"><a href="/reviews/<%=reviews[x].id%>/delete">Delete review</a></button>
+        <button type="submit" class= "addnewbutton"><a href="/reviews/<%=reviews[x].restaurant_id%>/new/">Add new review</a></button>
+        <% } %>
 
 <%- include('../partials/footer') %>
 <%- include('../partials/foot') %>

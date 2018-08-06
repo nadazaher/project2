@@ -18,20 +18,33 @@ const handle404 = (err, req, res, next) => {
     res.sendStatus(404);
 };
 
+// get all reviews - just for test
 reviewsRouter.route('/').get(reviewsController.index, showJSON);
-reviewsRouter.route('/:id/edit').get(reviewsController.getById, viewController.showReviewById, viewController.show404);
-reviewsRouter.route('/:id').delete(reviewsController.deleteReview, viewController.handleDestroy);
-reviewsRouter.route('/:id').put(reviewsController.updateReview, viewController.handleUpdate,
-  (req,res) => res.redirect(`/reviews`));
-
-
-
-reviewsRouter.route('/new').get(viewController.createReview, viewController.show404);
-//not hitting this /new route
-
+reviewsRouter.route('/:id/new').get(viewController.createReview);
 reviewsRouter.route('/').post(reviewsController.createReview, 
-(req,res) => res.redirect(`/reviews`)
-);
+  (req,res) => res.redirect(`/reviews`)
+  );
+
+// get reviews by reviews.restaurant_id
+reviewsRouter.route('/:id').get(reviewsController.getById, viewController.showReviewById, viewController.show404);
+// this needs to show the pre-filled review form,  DOES NOT WORK because ID in updateReview is undefined?
+
+
+
+reviewsRouter.route('/:id/edit').get(reviewsController.updateReview, viewController.showEdit);
+// this should allow user to update existing review DOES NOT WORK
+reviewsRouter.route('/:id').put(reviewsController.updateReview, viewController.handleUpdate,
+  (req,res) => res.redirect(`/reviews/:id`));
+
+// delete review when click button? 
+reviewsRouter.route('/:id/delete').delete(reviewsController.deleteReview, viewController.handleDelete);
+
+
+// this should allow user to create new review - not getting /new?
+//this should allow user to post new review?
+
 
 
 module.exports = reviewsRouter;
+
+

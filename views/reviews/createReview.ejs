@@ -2,12 +2,13 @@
 
 <form action="/reviews" method="post">
 <h2>New Review</h2>
+  <input type="hidden" value="<%= restaurant_id %>" name="restaurant_id">
 <label for="author">
   Author:
   <input type="text" name="author">
 </label>
 <label for="content">
-  Location:
+  Content:
   <input type="text" name="content">
 </label>
 <button type="submit">Create Review</button>

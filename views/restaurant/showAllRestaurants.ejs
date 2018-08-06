@@ -4,7 +4,7 @@
     <% restaurants.forEach(restaurant => { %>
 <!-- // loop into restaurants to show all -->
         <div class="restaurant-link">
-        <b><a href = "">Name: <%= restaurant.name %></a></b>
+        <b><a href = "reviews/<%=restaurant.id%>">Name: <%= restaurant.name %></a></b>
         </div>
         <p>Location: <%= restaurant.location %></p>
         <p>Cuisine: <%= restaurant.cuisine %></p>

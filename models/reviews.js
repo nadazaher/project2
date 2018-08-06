@@ -13,9 +13,9 @@ module.exports = {
     findById(id) {
         return db.query(`
         SELECT *
-        FROM reviews
-        where id = $1
-        `, id);
+        FROM reviews JOIN restaurant ON (reviews.restaurant_id = restaurant.id)
+        where restaurant.id = ${id}
+        `);
     },
 
     create(newReview) {

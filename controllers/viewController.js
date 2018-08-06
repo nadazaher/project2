@@ -12,25 +12,26 @@ module.exports = {
 
     filterRestaurant (req,res) {
         res.render('restaurant/filterRestaurant');
-    },
+    }, 
 
     showReviewById (req,res) {
         res.render('reviews/showReviewById', {reviews: res.locals.id});
     },
 
     createReview (req,res) {
-        console.log('new');
-        res.render('reviews/createReview');
-        // res.locals.data = newReview;
-
+        console.log('NADADADADAD');
+        console.log(res.locals);
+        res.render('reviews/createReview', {restaurant_id: req.params.id});
     },
 
-    handleDestroy(req, res) {
-        res.redirect('/reviews');
+    handleDelete(req, res) {
+        console.log('in here');
       },
 
-      showEdit(req, res) {
-        res.render('reviews/updateReview');
+    showEdit(req, res) {
+        // not able to understand the id here
+        res.render('reviews/updateReview', {reviews: res.locals.data[0].id});
+
       },
 
     handleUpdate(req, res) {
@@ -39,6 +40,7 @@ module.exports = {
       },
     
     show404(req, res) {
+        console.log('in hereeee')
         res.send(404);
     },
 

@@ -42,8 +42,7 @@ module.exports = {
           },
     
     updateReview(req, res, next) {
-        console.log('hello');
-        //const { id } = req.params.id
+        const { id } = req.params.id
         const { restaurant_id, author, content } = req.body;
         const modifiedReview = {
             id: req.params.id,
