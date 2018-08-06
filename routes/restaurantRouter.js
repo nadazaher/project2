@@ -14,12 +14,7 @@ restaurantRouter.route('/').get(restaurantController.index, viewController.showA
 restaurantRouter.route('/new').get(viewController.createRestaurant, viewController.show404);
 
 restaurantRouter.route('/').post(restaurantController.createRestaurant, 
-  // viewController.createRestaurant,
-//replace showJSON with whole function to res.render - this is to redirect
 (req,res) => res.redirect(`/restaurants`)
-// res.locals.id = id
 );
 
-//redirect anything for post/put/delete
-//pencil symbol - link to edit view page
 module.exports = restaurantRouter;

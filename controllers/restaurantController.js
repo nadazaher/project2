@@ -13,17 +13,18 @@ module.exports = {
         })
         .then((filteredRestaurants) => {
           res.locals.data = filteredRestaurants;
+          console.log(filteredRestaurants);
           //Check location and cuisine for filtered results - one location / one cuisine option
           if(req.query.location || req.query.cuisine){
             for(var x = 0; x < filteredRestaurants.length; x++){
               if(filteredRestaurants[x].location != location){
-                filteredRestaurants.splice(x,1)
+                filteredRestaurants.splice(x, 0)
               }
-              if(filteredRestaurants[x].cuisine != cuisine){
-                filteredRestaurants.splice(x,1)
-              }
-            }
-          }  
+              else if(filteredRestaurants[x].cuisine != cuisine){
+                filteredRestaurants.splice(x, 0)
+              } else {
+              return(filteredRestaurants);
+            }}}
           next();
         })
         .catch(e => next(e));

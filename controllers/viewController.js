@@ -10,22 +10,21 @@ module.exports = {
 
     },
 
-    filterRestaurant (req,res) {
-        res.render('restaurant/filterRestaurant');
-    }, 
+    // filterRestaurant (req,res) {
+    //     res.render('restaurant/filterRestaurant');
+    // }, 
 
     showReviewById (req,res) {
         res.render('reviews/showReviewById', {reviews: res.locals.id});
     },
 
     createReview (req,res) {
-        console.log('NADADADADAD');
-        console.log(res.locals);
-        res.render('reviews/createReview', {restaurant_id: req.params.id});
+        res.render('reviews/createReview', {reviews: res.locals.id, restaurant_id: req.params.id});
     },
 
     handleDelete(req, res) {
-        console.log('in here');
+        const id = restaurant_id;
+        res.redirect('reviews/:id');
       },
 
     showEdit(req, res) {
@@ -40,7 +39,6 @@ module.exports = {
       },
     
     show404(req, res) {
-        console.log('in hereeee')
         res.send(404);
     },
 

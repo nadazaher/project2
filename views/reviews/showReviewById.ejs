@@ -1,6 +1,6 @@
 <%- include('../partials/head') %>
 <body>
-        <h2>Here are the reviews for restaurant <%=reviews[0].name %></h2>
+        <h2>Here are the reviews for restaurant <b><%=reviews[0].name %></b></h2>
 <div>
         <% for (var x = 0; x < reviews.length; x++) { %>
         <p>Author: <%= reviews[x].author %></p>
