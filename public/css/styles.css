@@ -1,1 +1,46 @@
 /* // all CSS styling goes in here */
+
+
+body {
+    font-family: 'Rasa', serif;
+    background-image: url(https://static1.squarespace.com/static/54c54475e4b060a8975ec7e2/t/56c4112237013be054b4bef6/1455690019250/Tennis+World+NYC+Background+Blue2.jpg?format=1500w);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: teal;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+h2 {
+    font-family: 'Rasa', serif;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .filter-by-location {
+    font-size: 25px;
+    color: #922B21  ;
+
+}
+
+  .filter-by-cuisine {
+    font-size: 25px;
+    color: #922B21  ;
+
+  }
+
+  .flex-container {
+    display: flex;
+  height: 200px;
+  align-items: center;
+
+  }
+
+  .addnewbutton {
+    background-color: white;
+    width: 250px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
