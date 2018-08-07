@@ -47,37 +47,38 @@ INSERT INTO restaurant (name, location, cuisine, photo) VALUES
 ( 'Eataly', 
     'Flatiron',
         'Italian',
-        'https://static1.squarespace.com/static/565a9019e4b0a63eb2cc2b7d/t/5a20438b0d9297af42ddfc84/1512063892268/buddukan'),
+        'https://www.supermarketnews.com/sites/supermarketnews.com/files/gallery_promo_image/3-EatalyBiata-LW.png'),
 
 ( 'Junoon', 
     'Flatiron',
         'Indian',
-        'https://static1.squarespace.com/static/565a9019e4b0a63eb2cc2b7d/t/5a20438b0d9297af42ddfc84/1512063892268/buddukan'),
+        'http://images.nymag.com/restaurants/reviews/junoon110307_560.jpg'),
 
 ('Manousheh', 
     'Greenwich Village',
         'Lebanese',
-        'https://static1.squarespace.com/static/565a9019e4b0a63eb2cc2b7d/t/5a20438b0d9297af42ddfc84/1512063892268/buddukan'), 
+        'http://331mrnu3ylm2k3db3s1xd1hg-wpengine.netdna-ssl.com/wp-content/uploads/2013/10/Manousheh-Blue-Bottle-Popup-NYC-10-13-1000737.jpg'), 
 
 ('La Esquina', 
     'East Village',
         'Mexican',
-        'https://static1.squarespace.com/static/565a9019e4b0a63eb2cc2b7d/t/5a20438b0d9297af42ddfc84/1512063892268/buddukan'), 
+        'https://media-cdn.tripadvisor.com/media/photo-s/0e/0a/f0/1f/the-corner-la-esquina.jpg'), 
 
 ('aRoqa',
     'Chelsea',
         'Indian',
-        'https://static1.squarespace.com/static/565a9019e4b0a63eb2cc2b7d/t/5a20438b0d9297af42ddfc84/1512063892268/buddukan'),
+        'https://media.timeout.com/images/103955792/630/472/image.jpg'),
 
 ('Taqueria Diana',
     'Midtown',
         'Mexican',
-        'https://static1.squarespace.com/static/565a9019e4b0a63eb2cc2b7d/t/5a20438b0d9297af42ddfc84/1512063892268/buddukan'),
+        'https://eatingwithziggy.files.wordpress.com/2016/02/img_2983.jpg'),
+
 
 ('Babbo',
     'Greenwich Village',
         'Italian',
-        'https://static1.squarespace.com/static/565a9019e4b0a63eb2cc2b7d/t/5a20438b0d9297af42ddfc84/1512063892268/buddukan');
+        'http://www.foodtravelblog.com/blog/wp-content/uploads/2008/07/interior-babbo-k.jpg');
 
 
 DELETE FROM reviews;
