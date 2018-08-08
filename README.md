@@ -1,4 +1,4 @@
-https://github.com/nadazaher/project2/blob/master/Screen%20Shot%202018-08-08%20at%2012.07.24%20AM.png?raw=true
+![Screenshot] (Screen Shot 2018-08-08 at 12.07.24 AM.png)
 
 # Restaurant Recommender & Reviewer
 
