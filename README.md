@@ -3,7 +3,7 @@
 
 # Restaurant Recommender & Reviewer
 
-![Screenshot here](https://github.com/nadazaher/project2/Screen%Shot%2018-08-08%at%12.07.24%AM.png)
+![Screenshot here](https://github.com/nadazaher/blob/master/project2/Screen%Shot%2018-08-08%at%12.07.24%AM.png)
 
 
 
