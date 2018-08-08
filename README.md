@@ -63,10 +63,10 @@ The main things that could make my app and code better are:
 - Create more detailed restaurant pages with more than just reviews
 
 ## Future Ideas
-o	Using YELP API to trigger list of restaurants
-o	Adding user authentication so users have to log in before posting reviews
-o	Allowing users to edit, update, and delete only their own reviews
-o	Adding an admin to approve any submissions or edits before being posted
+- Using YELP API to trigger list of restaurants
+- Adding user authentication so users have to log in before posting reviews
+- Allowing users to edit, update, and delete only their own reviews
+- Adding an admin to approve any submissions or edits before being posted
 
 
 
