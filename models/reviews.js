@@ -6,41 +6,42 @@ module.exports = {
 
   findAll() {
     return db.many(`
-        SELECT * 
+        SELECT *
         FROM reviews
         `);
   },
   findByRestaurantId(id) {
     return db.many(`
-        SELECT 
-        author, 
-        content, 
+      SELECT
+        author,
+        content,
         name,
         photo,
         restaurant_id,
         reviews.id as review_id
-        FROM reviews 
-        JOIN restaurant 
+      FROM reviews
+      JOIN restaurant
         ON (reviews.restaurant_id = restaurant.id)
-        where restaurant.id = ${id}
+      WHERE restaurant.id = ${id}
         `);
   },
 
   findById(id) {
     return db.one(`
-        SELECT * FROM reviews
-        WHERE id=$1`, id);
+      SELECT *
+      FROM reviews
+      WHERE id=$1`, id);
   },
 
 
 
   create(newReview) {
     return db.one(`
-        INSERT INTO reviews
+      INSERT INTO reviews
         (restaurant_id, author, content)
-        VALUES
+      VALUES
         ($1, $2, $3)
-        RETURNING *
+      RETURNING *
         `, [newReview.restaurant_id, newReview.author, newReview.content]);
   },
 

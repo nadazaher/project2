@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyparser = require('body-parser');
 const restaurantController = require('../controllers/restaurantController');
 const viewController = require('../controllers/viewController');
 

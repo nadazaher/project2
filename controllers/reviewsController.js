@@ -16,7 +16,7 @@ module.exports = {
         console.log(res.locals.review);
         next();
       })
-      .catch((e) => {
+      .catch(() => {
         res.sendStatus(404);
       });
   },
@@ -27,7 +27,7 @@ module.exports = {
         console.log(res.locals.restaurant);
         next();
       })
-      .catch((e) => {
+      .catch(() => {
         res.sendStatus(404);
       });
   },
@@ -48,7 +48,7 @@ module.exports = {
       .then(() => {
         next();
       })
-      .catch((e) => {
+      .catch(() => {
         res.sendStatus(400);
       });
   },
@@ -57,7 +57,7 @@ module.exports = {
     const { id } = req.params.id;
     const { restaurant_id, author, content } = req.body;
     const modifiedReview = {
-      id: req.params.id,
+      id,
       restaurant_id,
       author,
       content,

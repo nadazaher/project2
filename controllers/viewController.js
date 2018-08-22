@@ -35,12 +35,10 @@ module.exports = {
   },
 
   handleUpdate(req, res) {
-    const { id } = req.params;
     res.redirect(`/reviews/${res.locals.data.restaurant_id}`);
   },
 
   handleCreate(req, res) {
-    const { id } = req.params;
     res.redirect(`/reviews/${res.locals.data.restaurant_id}`);
   },
 
