@@ -1,14 +1,11 @@
-\c restaurant_dev
+INSERT INTO restaurant (name, location, cuisine, photo) VALUES
 
-DELETE FROM restaurant;
-INSERT INTO restaurant (name, location, cuisine, photo) VALUES 
-
-( 'Ilili', 
+( 'Ilili',
     'Flatiron',
-        'Lebanese', 
+        'Lebanese',
          'https://static01.nyt.com/images/2008/01/30/dining/30rest600.1.jpg'),
 
-( 'Milos', 
+( 'Milos',
     'Midtown',
         'Greek',
             'https://i.pinimg.com/originals/c0/a5/b6/c0a5b6a88bf4c3d9bcdaf48dcc4ec1a6.jpg'),
@@ -20,7 +17,7 @@ INSERT INTO restaurant (name, location, cuisine, photo) VALUES
 
 ( 'Cacio E Pepe',
     'East Village',
-        'Italian',   
+        'Italian',
             'https://cdn1.gbot.me/photos/Sm/SV/1420748975/-Cacio_e_Pepe-20000000008719412-500x375.jpg'),
 
 ( 'Hillstone',
@@ -38,31 +35,31 @@ INSERT INTO restaurant (name, location, cuisine, photo) VALUES
        'Chinese',
             'https://static1.squarespace.com/static/565a9019e4b0a63eb2cc2b7d/t/5a20438b0d9297af42ddfc84/1512063892268/buddukan'),
 
-    
-( 'Red Farm', 
+
+( 'Red Farm',
     'Upper West Side',
         'Chinese',
             'http://www.glenwoodnyc.com/manhattan-living/wp-content/uploads/2011/09/red-farm-nyc-dim-sum-restaurant-village.jpg'),
 
-( 'Eataly', 
+( 'Eataly',
     'Flatiron',
         'Italian',
         'https://www.supermarketnews.com/sites/supermarketnews.com/files/gallery_promo_image/3-EatalyBiata-LW.png'),
 
-( 'Junoon', 
+( 'Junoon',
     'Flatiron',
         'Indian',
         'http://images.nymag.com/restaurants/reviews/junoon110307_560.jpg'),
 
-('Manousheh', 
+('Manousheh',
     'Greenwich Village',
         'Lebanese',
-        'http://331mrnu3ylm2k3db3s1xd1hg-wpengine.netdna-ssl.com/wp-content/uploads/2013/10/Manousheh-Blue-Bottle-Popup-NYC-10-13-1000737.jpg'), 
+        'http://331mrnu3ylm2k3db3s1xd1hg-wpengine.netdna-ssl.com/wp-content/uploads/2013/10/Manousheh-Blue-Bottle-Popup-NYC-10-13-1000737.jpg'),
 
-('La Esquina', 
+('La Esquina',
     'East Village',
         'Mexican',
-        'https://media-cdn.tripadvisor.com/media/photo-s/0e/0a/f0/1f/the-corner-la-esquina.jpg'), 
+        'https://media-cdn.tripadvisor.com/media/photo-s/0e/0a/f0/1f/the-corner-la-esquina.jpg'),
 
 ('aRoqa',
     'Chelsea',
@@ -86,7 +83,7 @@ DELETE FROM reviews;
 INSERT INTO reviews (restaurant_id, author, content) VALUES
 ( 1, 'Hannah',
     'I love everything Middle Eastern and Arab. Ilili has some of the best Arabic food in New York. It is a must try!!!'
-), 
+),
 ( 1, 'Santchel',
     'Very busy restaurant with 2 levels and multiple dining areas. Big happening bar scene. Dined upstairs which was less noisy. Food was delicious.'
     ),

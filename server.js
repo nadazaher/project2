@@ -23,12 +23,11 @@ app.use(methodOverride('_method'));
 app.use('/restaurants', restaurantRouter);
 app.use('/reviews', reviewsRouter);
 
-//Set up views
+// Set up views
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views')); 
+app.set('views', path.join(__dirname, 'views'));
 
 
 app.listen(PORT, () => {
-    console.log(`Server up and listening on port ${PORT}, in ${app.get('env')} mode.`);
-  });
-  
+  console.log(`Server up and listening on port ${PORT}, in ${app.get('env')} mode.`);
+});

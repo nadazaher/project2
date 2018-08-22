@@ -3,10 +3,22 @@
   "version": "1.0.0",
   "description": "Project 2 - Restaurant Recommender &amp; Reviewer",
   "main": "index.js",
+  "config": {
+    "dbname": {
+      "dev": "restaurant_dev",
+      "test": "restaurant_test"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "debug": "nodemon --inspect-brk"
+    "debug": "nodemon --inspect-brk",
+    "db:init:dev": "dropdb $npm_package_config_dbname_dev; createdb $npm_package_config_dbname_dev",
+    "db:init:test": "createdb $npm_package_config_dbname_test",
+    "db:create:dev": "psql -d $npm_package_config_dbname_dev -f db/schema.sql",
+    "db:create:test": "psql -d $npm_package_config_dbname_test -f db/schema.sql",
+    "db:seed:dev": "psql -d $npm_package_config_dbname_dev -f db/seed.sql",
+    "db:seed:test": "psql -d $npm_package_config_dbname_test -f db/seed.sql"
   },
   "repository": {
     "type": "git",
@@ -24,7 +36,12 @@
     "express": "^4.16.3",
     "method-override": "^3.0.0",
     "morgan": "^1.9.0",
-    "nodemon": "^1.18.3",
     "pg-promise": "^8.4.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.3"
   }
 }
