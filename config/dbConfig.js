@@ -1,5 +1,5 @@
 module.exports = {
-    database: 'restaurant_dev',
-    host: 'localhost',
-    port: 5432,
-    }; 
+  database: 'restaurant_dev',
+  host:     'localhost',
+  port:     5432,
+};

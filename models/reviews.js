@@ -1,17 +1,17 @@
 // execute pgp with db config, so a connection is made
-const {db} = require('../config/connection');
+const { db } = require('../config/connection');
 
 // exporting my functions
 module.exports = {
 
-    findAll() {
-        return db.many(`
+  findAll() {
+    return db.many(`
         SELECT * 
         FROM reviews
         `);
-    },
-    findByRestaurantId(id) {
-        return db.many(`
+  },
+  findByRestaurantId(id) {
+    return db.many(`
         SELECT 
         author, 
         content, 
@@ -24,38 +24,38 @@ module.exports = {
         ON (reviews.restaurant_id = restaurant.id)
         where restaurant.id = ${id}
         `);
-    },
+  },
 
-    findById(id){
-        return db.one(`
+  findById(id) {
+    return db.one(`
         SELECT * FROM reviews
-        WHERE id=$1`,id)
-    },
+        WHERE id=$1`, id);
+  },
 
 
 
-    create(newReview) {
-        return db.one(`
+  create(newReview) {
+    return db.one(`
         INSERT INTO reviews
         (restaurant_id, author, content)
         VALUES
         ($1, $2, $3)
         RETURNING *
         `, [newReview.restaurant_id, newReview.author, newReview.content]);
-    },
+  },
 
-    delete(id) {
-        return db.none(`
+  delete(id) {
+    return db.none(`
         DELETE FROM reviews
         WHERE id = $1`, id);
-    },
+  },
 
-    update(review) {
-        return db.one(`
+  update(review) {
+    return db.one(`
         UPDATE reviews
         SET author = $/author/, content = $/content/
         WHERE id = $/id/
         RETURNING *
         `, review);
-    }
+  },
 };
