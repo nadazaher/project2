@@ -1,6 +1,4 @@
-\c restaurant_dev
-
-DROP TABLE IF EXISTS reviews; 
+DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS restaurant;
 
 CREATE TABLE restaurant (
