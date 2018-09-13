@@ -3,10 +3,11 @@
 
 body {
     font-family: 'Rasa', serif;
-    background-image: url(https://static1.squarespace.com/static/54c54475e4b060a8975ec7e2/t/56c4112237013be054b4bef6/1455690019250/Tennis+World+NYC+Background+Blue2.jpg?format=1500w);
+    /* background-image: url(https://static1.squarespace.com/static/54c54475e4b060a8975ec7e2/t/56c4112237013be054b4bef6/1455690019250/Tennis+World+NYC+Background+Blue2.jpg?format=1500w); */
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
-    color: teal;
+    color: white;
     font-weight: bold;
     font-size: 20px;
 
@@ -20,14 +21,14 @@ h2 {
   }
 
   .filter-by-location {
-    font-size: 25px;
-    color: #922B21  ;
+    font-size: 20px;
+    color: goldenrod  ;
 
 }
 
   .filter-by-cuisine {
-    font-size: 25px;
-    color: #922B21  ;
+    font-size: 20px;
+    color: goldenrod  ;
 
   }
 
@@ -40,7 +41,30 @@ h2 {
 
   .addnewbutton {
     background-color: white;
-    width: 250px;
+    width: 200px;
     border-radius: 4px;
     font-size: 16px;
   }
+
+  .search-button {
+    background-color: white;
+    width: 200px;
+    border-radius: 4px;
+    font-size: 16px;
+
+  }
+  button {
+    background-color: white;
+    width: 200px;
+    border-radius: 4px;
+    font-size: 16px;
+
+  }
+
+  updatebutton {
+    background-color: white;
+    width: 200px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+

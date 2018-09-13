@@ -5,13 +5,9 @@ const viewController = require('../controllers/viewController');
 const restaurantRouter = express.Router();
 const reviewsController = require('../controllers/reviewsController');
 
-// const showJSON = (req,res) => {
-//     res.json(res.locals.data);
-//   };
 
 
 restaurantRouter.route('/').get(restaurantController.index, viewController.showAllRestaurants, viewController.show404);
-// add filter here too viewController.filterRestaurant?
 restaurantRouter.route('/new').get(viewController.createRestaurant, viewController.show404);
 
 restaurantRouter.route('/').post(restaurantController.createRestaurant, 

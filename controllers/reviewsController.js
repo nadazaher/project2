@@ -53,6 +53,9 @@ module.exports = {
             })
           },
     
+          // this function takes the three parameters and declares variables needed to show the existing review
+          // then calls on the update function in models and returns a promise with the modified review
+          // if code runs smoothly, function will call next(), if not it will catch an error
     updateReview(req, res, next) {
         const { id } = req.params.id
         const { restaurant_id, author, content } = req.body;
@@ -65,7 +68,6 @@ module.exports = {
         db.update(modifiedReview)
              .then((review) => {
                res.locals.data = review;
-               console.log('nada', res.locals.data);
                next();
              })
              .catch(e => next(e));

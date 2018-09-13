@@ -33,7 +33,6 @@ module.exports = {
     },
 
 
-
     create(newReview) {
         return db.one(`
         INSERT INTO reviews
