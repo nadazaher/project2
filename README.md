@@ -1,4 +1,4 @@
-![alt text](https://github.com/nadazaher/blob/master/project2/Screen%Shot%2018-08-08%at%12.07.24%AM.png)
+Link to deployed app -  https://powerful-waters-77474.herokuapp.com/restaurants/
 
 # Restaurant Recommender & Reviewer
 
